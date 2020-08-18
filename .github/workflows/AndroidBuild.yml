@@ -1,4 +1,4 @@
-name: Unity Build
+name: Android Debug Build
 on:
   workflow_dispatch:
 jobs:
