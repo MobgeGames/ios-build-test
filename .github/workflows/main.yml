@@ -21,8 +21,8 @@ jobs:
       with:
         project-path: Output/Unity-iPhone.xcodeproj
         p12-base64: ${{ secrets.P12_BASE64 }}
-        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64_DEVELOPMENT }}
-        code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY_DEVELOPMENT }}
+        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64_ADHOC }}
+        code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY_ADHOC }}
         certificate-password: ${{ secrets.CERTIFICATE_PASSWORD }}
         team-id: ${{ secrets.TEAM_ID }}
         export-method: ad-hoc
