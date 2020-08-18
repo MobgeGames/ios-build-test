@@ -1,4 +1,4 @@
-name: Android Debug Build
+name: Android Debug Build Ali
 on:
   workflow_dispatch:
 jobs:
