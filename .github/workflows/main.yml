@@ -17,7 +17,7 @@ jobs:
         unity-serial: ${{ secrets.UNITY_SERIAL }}
         execute-method: Mobge.HyperCasualSetup.StaticBuilder.Build
         build-target: iOS
-    - uses: MobgeGames/ios-build-action@v1.1.0
+    - uses: MobgeGames/ios-build-action@v1.1.1
       with:
         project-path: Output/Unity-iPhone.xcodeproj
         p12-base64: ${{ secrets.P12_BASE64 }}
