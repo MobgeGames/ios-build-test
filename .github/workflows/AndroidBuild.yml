@@ -1,0 +1,35 @@
+name: Unity Build
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+        token: ${{ secrets.TOKEN }}
+    - uses: yukiarrr/unity-build-action@v0.6.0
+      with:
+        unity-version: 2019.4.8f1
+        unity-username: ${{ secrets.UNITY_USERNAME }}
+        unity-password: ${{ secrets.UNITY_PASSWORD }}
+        unity-serial: ${{ secrets.UNITY_SERIAL }}
+        execute-method: Mobge.HyperCasualSetup.StaticBuilder.Build
+        build-target: iOS
+    - uses: yukiarrr/ios-build-action@v1.1.0
+      with:
+        project-path: Output/Unity-iPhone.xcodeproj
+        p12-base64: ${{ secrets.P12_BASE64 }}
+        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64_ADHOC }}
+        code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY_ADHOC }}
+        certificate-password: ${{ secrets.CERTIFICATE_PASSWORD }}
+        team-id: ${{ secrets.TEAM_ID }}
+        export-method: ad-hoc
+        configuration: Release
+        output-path: app-release.ipa
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: ios
+        path: app-release.ipa
