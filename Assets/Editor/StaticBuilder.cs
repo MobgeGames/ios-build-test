@@ -46,6 +46,9 @@ namespace Mobge.HyperCasualSetup {
                 }
             }
             BuildPipeline.BuildPlayer(scenes, outputPath, buildTarget, BuildOptions.None);
+            Debug.Log("Build Completed!");
+            Debug.Log($"Output Path: {outputPath}");
+            DirectoryTree.PrintDirectoryTree(outputPath);
         }
     }
 }
