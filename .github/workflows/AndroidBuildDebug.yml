@@ -17,5 +17,5 @@ jobs:
           unity-serial: ${{ secrets.UNITY_SERIAL }}
           execute-method: Mobge.HyperCasualSetup.StaticBuilder.Build
           build-target: Android
-        - shell: cmd
-          run: dir
+      - shell: cmd
+        run: dir
