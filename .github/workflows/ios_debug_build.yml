@@ -1,4 +1,4 @@
-name: Unity Build
+name: IOS Debug Build
 on:
   workflow_dispatch:
 jobs:
