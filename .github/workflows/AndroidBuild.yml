@@ -6,6 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: cd C:\
+      - run: dir
     
      
 
